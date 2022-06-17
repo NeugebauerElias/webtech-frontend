@@ -1,10 +1,20 @@
 <template>
-  <nav>
-    <router-link to="/">Test</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <HeaderSection/>
+  <FlashCard/>
 </template>
+
+<script>
+import HeaderSection from './components/HeaderSection'
+import FlashCard from '@/components/FlashCard'
+
+export default {
+  name: 'App',
+  components: {
+    HeaderSection,
+    FlashCard
+  }
+}
+</script>
 
 <style>
 #app {
