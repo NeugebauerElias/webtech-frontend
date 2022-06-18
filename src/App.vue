@@ -1,17 +1,20 @@
 <template>
   <HeaderSection/>
-  <FlashCard/>
+  <AddDeck/>
+  <AddCard/>
 </template>
 
 <script>
 import HeaderSection from './components/HeaderSection'
-import FlashCard from '@/components/FlashCard'
+import AddDeck from '@/components/AddDeck'
+import AddCard from '@/components/AddCard'
 
 export default {
   name: 'App',
   components: {
     HeaderSection,
-    FlashCard
+    AddDeck,
+    AddCard
   }
 }
 </script>
@@ -23,18 +26,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
