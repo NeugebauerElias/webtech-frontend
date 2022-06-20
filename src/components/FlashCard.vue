@@ -11,12 +11,13 @@ export default {
     }
   },
   mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
     }
 
-    fetch('http://localhost:8080/album', requestOptions)
+    fetch(endpoint, requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error))
