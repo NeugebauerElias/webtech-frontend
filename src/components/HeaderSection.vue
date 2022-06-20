@@ -1,13 +1,21 @@
 <template>
-  <h1> This is a heading </h1>
+  <div class="header">
+    <h1>{{ msg }}</h1>
+    <a href="/#/cardDeck">Go To Albums</a>
+  </div>
 </template>
 
 <script>
-
-</script>
 export default {
-  name: 'HeaderSection'
+  name: 'HeaderSection',
+  data () {
+    return {
+      msg: 'Add a Deck'
+    }
+  }
 }
-<style>
+</script>
+
+<style scoped>
 
 </style>

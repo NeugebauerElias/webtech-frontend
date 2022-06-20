@@ -1,10 +1,18 @@
 <template>
-<h1> An example Deck</h1>
+  <div class="header">
+<h1> {{ msg }}</h1>
+  <a href="/home">Add a Card to your Deck</a>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'CardDeck'
+  name: 'CardDeck',
+  data () {
+    return {
+      msg: 'Thats a Deck'
+    }
+  }
 }
 </script>
 

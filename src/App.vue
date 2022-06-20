@@ -1,20 +1,20 @@
 <template>
-  <HeaderSection/>
-  <AddDeck/>
-  <AddCard/>
+  <HomeView/>
+  <AboutView/>
 </template>
 
 <script>
-import HeaderSection from './components/HeaderSection'
-import AddDeck from '@/components/AddDeck'
-import AddCard from '@/components/AddCard'
+// import HeaderSection from './components/HeaderSection'
+// import AddDeck from '@/components/AddDeck'
+// import AddCard from '@/components/AddCard'
+import HomeView from '@/views/HomeView'
 
 export default {
   name: 'App',
   components: {
-    HeaderSection,
-    AddDeck,
-    AddCard
+    HomeView
+    // AddDeck,
+    // AddCard
   }
 }
 </script>
