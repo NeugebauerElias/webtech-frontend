@@ -6,7 +6,7 @@
     <input v-model="name" placeholder="DeckName">
     <br>
     <br>
-    <button type="submit" @click.prevent="createAlbum()">Safe</button>
+    <button type="submit" @click="createAlbum()">Safe</button>
   </div>
 </template>
 <script>
@@ -21,7 +21,23 @@ export default {
     loadThings () {
     },
     createAlbum () {
-      console.log(this.name)
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
+      const myHeaders = new Headers()
+      myHeaders.append('Content-Type', 'application/json')
+
+      const raw = JSON.stringify({
+        name: this.name
+      })
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      }
+
+      fetch(endpoint, requestOptions)
+        .catch(error => console.log('error', error))
     },
     safe () {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
