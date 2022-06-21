@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>{{ msg }}</h1>
+    <h1> FlashCard App </h1>
     <a href="/#/cardDeck">Go To Albums</a>
   </div>
 </template>

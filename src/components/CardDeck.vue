@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-<h1> {{ msg }}</h1>
+  <h1> Deck: {{ msg }}</h1>
   <a href="/home">Add a Card to your Deck</a>
   </div>
 </template>
@@ -10,7 +10,7 @@ export default {
   name: 'CardDeck',
   data () {
     return {
-      msg: 'Thats a Deck'
+      msg: 'XY'
     }
   }
 }
