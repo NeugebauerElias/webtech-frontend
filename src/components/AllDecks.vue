@@ -37,9 +37,26 @@ export default {
 }
 </script>
 <style scoped>
- li{
-   padding: 20px;
-   border-color: #2c3e50;
-   text-align: center;
- }
+ul{
+  list-style-type: none;
+  text-align: center;
+  margin-right: 40px;
+}
+li{
+  display: inline-block;
+  padding: 10px 10px;
+  background: orange;
+  margin: 5px;
+  border-radius: 8px;
+}
+li:hover{
+  background: orangered;
+}
+a{
+  color: black;
+  text-decoration: none;
+  padding: 30px 30px;
+  border-radius: 10px;
+  border-color: black;
+}
 </style>

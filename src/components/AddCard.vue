@@ -7,9 +7,12 @@
     <input v-model="frontInformation" placeholder="Vorderseite">
     <input v-model="backInformation" placeholder="Rückseite">
     <br>
+    <select name="cars" id="cars">
+      <option v-for="deck in flashCards" :key="deck.id">{{ deck.name }} </option>
+    </select>
     <br>
-    <button type="submit" @click.prevent="createCard()">Safe</button>
-    <button type="reset">Clear</button>
+    <button class="button button1" type="submit" @click.prevent="createCard()">Safe</button>
+    <button class="button button2" type="reset">Clear</button>
   </div>
   </form>
 </template>
@@ -19,8 +22,22 @@ export default {
   data () {
     return {
       frontInformation: '',
-      backInformation: ''
+      backInformation: '',
+      flashCards: []
     }
+  },
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(card => {
+        this.flashCards.push(card)
+      }))
+      .catch(error => console.log('error', error))
   },
   methods: {
     loadThings () {
@@ -29,7 +46,7 @@ export default {
       console.log(this.frontInformation)
       console.log(this.backInformation)
 
-      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + 1 + '/card/'
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + '/card/'
 
       const myHeaders = new Headers()
       myHeaders.append('Content-Type', 'application/json')
@@ -74,4 +91,20 @@ export default {
 </script>
 
 <style scoped>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 2px;
+  cursor: pointer;
+}
+.button1{
+  background-color: #4CAF50;
+}
+.button2 {
+  background: red;
+}
 </style>
