@@ -2,21 +2,21 @@
   <app-header></app-header>
   <nav>
     <ul>
-      <li><router-link to="/add">Add a Deck</router-link></li>
-      <li><router-link to="/decks">Deck</router-link></li>
+      <li><router-link to="/add" exact>Add a Deck</router-link></li>
+      <li><router-link to="/decks" exact>Deck</router-link></li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default{}
+export default {}
 </script>
 
 <style scoped>
   ul{
     list-style-type: none;
     text-align: center;
-    margin-right: 50px;
+    margin-right: 40px;
   }
   li{
     display: inline-block;
@@ -24,7 +24,7 @@ export default{}
     padding: 10px 10px;
   }
   li:hover{
-    background: grey;
+    background: #eee;
   }
   a{
     color: #fff;
@@ -38,5 +38,9 @@ export default{}
   nav{
     background: #444;
     margin-bottom: 40px;
+  }
+  .router-link-active{
+    background: #eee;
+    color: #444;
   }
 </style>

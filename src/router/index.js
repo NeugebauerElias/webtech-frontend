@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/Home.vue'
 import CardDeck from '@/components/CardDeck.vue'
 import AddDeck from '@/components/AddDeck.vue'
+import AddCard from '@/components/AddCard.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/add',
     name: 'add',
     component: AddDeck
+  },
+  {
+    path: '/addCard',
+    name: 'addCard',
+    component: AddCard
   }
 ]
 
