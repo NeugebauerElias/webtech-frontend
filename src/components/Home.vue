@@ -1,14 +1,16 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
+    <p>Willkommen bei IndexCard, Erstelle Decks und Karteikarten und lerne was das Zeug hält</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data () {
+    return {
+      msg: 'Startseite'
+    }
   }
 }
 </script>

@@ -1,0 +1,42 @@
+<template>
+  <app-header></app-header>
+  <nav>
+    <ul>
+      <li><router-link to="/add">Add a Deck</router-link></li>
+      <li><router-link to="/decks">Deck</router-link></li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+export default{}
+</script>
+
+<style scoped>
+  ul{
+    list-style-type: none;
+    text-align: center;
+    margin-right: 50px;
+  }
+  li{
+    display: inline-block;
+    margin: 0 0px;
+    padding: 10px 10px;
+  }
+  li:hover{
+    background: grey;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+  }
+  a:hover{
+    color: green;
+  }
+  nav{
+    background: #444;
+    margin-bottom: 40px;
+  }
+</style>

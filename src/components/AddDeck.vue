@@ -1,7 +1,6 @@
 <template>
   <div class="header">
     <h1>{{ msg }}</h1>
-    <a href="/#/about">Go To Albums</a>
   </div>
   <form action="">
     <label for="title">Title:</label><br><br>

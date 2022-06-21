@@ -1,7 +1,7 @@
 <template>
   <div class="header">
 <h1> {{ msg }}</h1>
-  <a href="/home">Add a Card to your Deck</a>
+  <a href="/">Add a Card to your Deck</a>
   </div>
 </template>
 

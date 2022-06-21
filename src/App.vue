@@ -1,20 +1,16 @@
 <template>
-  <HomeView/>
-  <AboutView/>
+  <div>
+    <app-header></app-header>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-// import HeaderSection from './components/HeaderSection'
-// import AddDeck from '@/components/AddDeck'
-// import AddCard from '@/components/AddCard'
-import HomeView from '@/views/HomeView'
+import header from './components/Header.vue'
 
 export default {
-  name: 'App',
   components: {
-    HomeView
-    // AddDeck,
-    // AddCard
+    'app-header': header
   }
 }
 </script>
