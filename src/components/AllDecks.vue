@@ -6,9 +6,9 @@
     </p>
   </div>
   <div class="nav">
-    <li><a href="/deck"> Deck1 </a></li>
-    <li><a href="/deck"> Deck2 </a></li>
-    <li><a href="/deck"> Deck3 </a></li>
+    <ul>
+      <li v-for="card in flashCards" :key="card.id"><a href="/deck"> {{ card.name }} </a></li>
+    </ul>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
     fetch(endpoint, requestOptions)
       .then(response => response.json())
       .then(result => result.forEach(card => {
-        this.items.push(card)
+        this.flashCards.push(card)
       }))
       .catch(error => console.log('error', error))
   }

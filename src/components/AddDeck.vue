@@ -24,7 +24,7 @@ export default {
       console.log(this.name)
     },
     safe () {
-      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/1/card'
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
       const data = {
         name: this.name
       }
