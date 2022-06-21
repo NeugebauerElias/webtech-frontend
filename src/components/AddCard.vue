@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>Add a new Deck</h1>
+    <h1>Add a new Card</h1>
   </div>
   <div>
     <input v-model="frontInformation" placeholder="Vorderseite">
