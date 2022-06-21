@@ -3,33 +3,45 @@
     <h1>Add a new Deck</h1>
   </div>
   <div>
-    <input v-model="frontInformation" placeholder="Vorderseite">
-    <input v-model="backInformation" placeholder="Rückseite">
+    <input v-model="name" placeholder="DeckName">
+    <br>
+    <br>
+    <button type="submit" @click.prevent="createAlbum()">Safe</button>
   </div>
 </template>
 <script>
 export default {
-  name: 'FlashCard',
-  props: ['title'],
+  name: 'AddDeck',
   data () {
     return {
-      flashCards: [],
-      frontInformation: '',
-      backInformation: ''
+      name: ''
     }
   },
-  mounted () {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album'
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
+  methods: {
+    loadThings () {
+    },
+    createAlbum () {
+      console.log(this.name)
+    },
+    safe () {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/1/card'
+      const data = {
+        name: this.name
+      }
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+      fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data)
+        })
+        .catch(error => console.log('error', error))
     }
-    fetch(endpoint, requestOptions)
-      .then(response => response.json())
-      .then(result => result.forEach(card => {
-        this.items.push(card)
-      }))
-      .catch(error => console.log('error', error))
   }
 }
 </script>

@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import header from './components/Header.vue'
+import HeaderSection from './components/HeaderSection.vue'
 
 export default {
   components: {
-    'app-header': header
+    'app-header': HeaderSection
   }
 }
 </script>

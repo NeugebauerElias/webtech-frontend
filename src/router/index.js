@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/components/Home.vue'
-import CardDeck from '@/components/CardDeck.vue'
+import Home from '@/components/HomeView.vue'
 import AddDeck from '@/components/AddDeck.vue'
 import AddCard from '@/components/AddCard.vue'
+import AllDecks from '@/components/AllDecks.vue'
+import CardDeck from '@/components/CardDeck.vue'
 
 const routes = [
   {
@@ -12,8 +13,8 @@ const routes = [
   },
   {
     path: '/decks',
-    name: 'deck',
-    component: CardDeck
+    name: 'decks',
+    component: AllDecks
   },
   {
     path: '/add',
@@ -24,6 +25,11 @@ const routes = [
     path: '/addCard',
     name: 'addCard',
     component: AddCard
+  },
+  {
+    path: '/deck',
+    name: 'deck',
+    component: CardDeck
   }
 ]
 

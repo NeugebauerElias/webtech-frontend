@@ -1,18 +1,20 @@
 <template>
   <div class="header">
-  <h1> Deck: {{ title }}</h1>
+    <h1> Deck: {{ title }}</h1>
     <p>
-      Here is an example of a Deck.
-      It shows all cards or one by one.<br>
-      And then there is the function to add a new Card, which ist automatically added to the album the user is in.
+      Here are decks shown, propably with the name in it.
     </p>
-    <a href="/addCard">add a Card</a>
+  </div>
+  <div class="nav">
+    <li><a href="/deck"> Deck1 </a></li>
+    <li><a href="/deck"> Deck2 </a></li>
+    <li><a href="/deck"> Deck3 </a></li>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CardDeck',
+  name: 'FlashCard',
   props: ['title'],
   data () {
     return {
@@ -35,5 +37,9 @@ export default {
 }
 </script>
 <style scoped>
-
+ li{
+   padding: 20px;
+   border-color: #2c3e50;
+   text-align: center;
+ }
 </style>

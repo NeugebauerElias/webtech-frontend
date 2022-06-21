@@ -20,7 +20,6 @@ export default {}
   }
   li{
     display: inline-block;
-    margin: 0 0px;
     padding: 10px 10px;
   }
   li:hover{

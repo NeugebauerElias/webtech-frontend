@@ -2,27 +2,32 @@
   <div class="header">
     <h1>Add a new Card</h1>
   </div>
+  <form class="information">
   <div>
     <input v-model="frontInformation" placeholder="Vorderseite">
     <input v-model="backInformation" placeholder="Rückseite">
     <br>
     <br>
-    <button type="button" @click="safe()">Safe</button>
+    <button type="submit" @click.prevent="createCard()">Safe</button>
+    <button type="reset">Clear</button>
   </div>
+  </form>
 </template>
 <script>
 export default {
   name: 'AddCard',
-  props: ['title'],
   data () {
     return {
-      flashCards: [],
       frontInformation: '',
       backInformation: ''
     }
   },
   methods: {
     loadThings () {
+    },
+    createCard () {
+      console.log(this.frontInformation)
+      console.log(this.backInformation)
     },
     safe () {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/1/card'
