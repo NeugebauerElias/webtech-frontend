@@ -28,6 +28,26 @@ export default {
     createCard () {
       console.log(this.frontInformation)
       console.log(this.backInformation)
+
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + 1 + '/card/'
+
+      const myHeaders = new Headers()
+      myHeaders.append('Content-Type', 'application/json')
+
+      const raw = JSON.stringify({
+        frontInformation: this.frontInformation,
+        backInformation: this.backInformation
+      })
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      }
+
+      fetch(endpoint, requestOptions)
+        .catch(error => console.log('error', error))
     },
     safe () {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/1/card'
