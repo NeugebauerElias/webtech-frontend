@@ -18,14 +18,14 @@
 
 <script>
 export default {
-  name: 'FlashCard',
-  props: ['title'],
+  name: 'AllDecks',
   data () {
     return {
       decks: []
     }
   },
   mounted () {
+    console.log('StinckiRYZEOP')
     const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album'
     const requestOptions = {
       method: 'GET',

@@ -16,7 +16,7 @@ export default {
     }
   },
   mounted () {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + this.id
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album' + this.id
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
