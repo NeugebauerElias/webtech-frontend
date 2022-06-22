@@ -1,5 +1,9 @@
 <template>
   <h1>A list of cards </h1>
+  <div v-for="card in deck" :key="card">
+    <p> {{ card }}</p>
+  </div>
+  <p> {{ deck }}</p>
 </template>
 
 <script>
@@ -8,7 +12,7 @@ export default {
   props: ['id'],
   data () {
     return {
-      flashCards: []
+      deck: null
     }
   },
   mounted () {
@@ -20,7 +24,7 @@ export default {
 
     fetch(endpoint, requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => { this.deck = result })
       .catch(error => console.log('error', error))
   }
 }

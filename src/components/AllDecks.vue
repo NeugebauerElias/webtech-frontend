@@ -8,9 +8,8 @@
   <div class="nav">
     <ul>
      <div v-for="deck in decks" :key="deck.albumId">
-       <router-link to="{ name: 'CardList', params: {id: deck.albumId}">
-         <li ><a href="/deck"> {{ deck.name }} {{ deck.cards }} {{ deck.albumId}}</a></li>
-         <p> {{ deck }} </p>
+       <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
+         <li > {{ deck.name }} </li>
        </router-link>
      </div>
     </ul>

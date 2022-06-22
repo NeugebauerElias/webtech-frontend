@@ -41,7 +41,8 @@ const routes = [
   {
     path: '/card/:id',
     name: 'CardList',
-    component: CardList
+    component: CardList,
+    props: true
   }
 ]
 
