@@ -4,6 +4,7 @@ import AddDeck from '@/components/AddDeck.vue'
 import AddCard from '@/components/AddCard.vue'
 import AllDecks from '@/components/AllDecks.vue'
 import CardDeck from '@/components/CardDeck.vue'
+import FlashCard from '@/components/FlashCard'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/deck',
     name: 'deck',
     component: CardDeck
+  },
+  {
+    path: '/card',
+    name: 'Card',
+    component: FlashCard
   }
 ]
 

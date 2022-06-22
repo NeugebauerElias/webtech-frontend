@@ -7,7 +7,12 @@
   </div>
   <div class="nav">
     <ul>
-      <li v-for="card in decks" :key="card.id"><a href="/deck"> {{ card.name }} </a></li>
+     <div v-for="deck in decks" :key="deck.albumId">
+       <router-link to="/card">
+         <li ><a href="/deck"> {{ deck.name }} {{ deck.cards }} {{ deck.albumId}}</a></li>
+         <p> {{ deck }} </p>
+       </router-link>
+     </div>
     </ul>
   </div>
 </template>

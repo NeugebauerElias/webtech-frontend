@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted () {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album'
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -28,7 +28,7 @@ export default {
     fetch(endpoint, requestOptions)
       .then(response => response.json())
       .then(result => result.forEach(card => {
-        this.items.push(card)
+        this.flashCards.push(card)
       }))
       .catch(error => console.log('error', error))
   }
