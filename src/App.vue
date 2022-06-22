@@ -2,18 +2,15 @@
   <div>
     <app-header></app-header>
     <router-view></router-view>
-    <HomeView></HomeView>
   </div>
 </template>
 
 <script>
 import HeaderSection from './components/HeaderSection.vue'
-import HomeView from '@/components/HomeView'
 
 export default {
   components: {
-    'app-header': HeaderSection,
-    HomeView
+    'app-header': HeaderSection
   }
 }
 </script>
