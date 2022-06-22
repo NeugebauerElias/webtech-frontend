@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1> Startseite </h1>
     <p>Willkommen bei IndexCard, Erstelle Decks und Karteikarten und lerne was das Zeug hält</p>
   </div>
 </template>
