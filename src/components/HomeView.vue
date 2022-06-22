@@ -1,15 +1,16 @@
 <template>
   <div>
-    <h1> {{ msg }} </h1>
-    <p>Willkommen bei IndexCard, Erstelle Decks und Karteikarten und lerne was das Zeug hält</p>
+    <h1> {{ msg2 }} </h1>
+    <p> {{ msg }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['msg'],
   data () {
     return {
-      msg: 'Hello World'
+      msg2: 'Hello World'
     }
   }
 }
