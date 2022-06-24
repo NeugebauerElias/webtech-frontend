@@ -15,6 +15,12 @@ export default {
       deck: null
     }
   },
+  methods: {
+    turnIntoJson () {
+      this.deck = JSON.stringify(this.deck)
+      this.deck = JSON.parse(this.deck)
+    }
+  },
   mounted () {
     const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + this.id
     const requestOptions = {
