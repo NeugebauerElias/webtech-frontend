@@ -1,14 +1,16 @@
 <template>
   <h1>A list of cards </h1>
+  <div class="container">
+    <div class="card" v-for="card in deck.cards" :key="card.id">
+      <p> Front: {{ card.frontInformation }} </p>
+      <p> Back: {{ card.backInformation }} </p>
+    </div>
+  </div>
   <div>
     <h1>Delete a Card</h1>
   <input v-model="cardId" placeholder="ID">
   <br>
   <button type="submit" @click="deleteCard">Delete</button>
-  </div>
-  <div v-for="card in deck.cards" :key="card.albumId">
-    <p> Front: {{ card.frontInformation }} </p>
-    <p> Back: {{ card.backInformation }} </p>
   </div>
 </template>
 
@@ -61,5 +63,15 @@ export default {
 </script>
 
 <style scoped>
-
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    border: 1px solid;
+    border-radius: 4px;
+    width: 200px;
+    margin: 20px;
+  }
 </style>
