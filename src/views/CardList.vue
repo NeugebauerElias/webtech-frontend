@@ -6,10 +6,10 @@
   <br>
   <button type="submit" @click="deleteCard">Delete</button>
   </div>
-  <div v-for="card in deck" :key="card">
-    <p> {{ card }}</p>
+  <div v-for="card in deck.cards" :key="card.albumId">
+    <p> Front: {{ card.frontInformation }} </p>
+    <p> Back: {{ card.backInformation }} </p>
   </div>
-  <p> {{ deck }}</p>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   props: ['id'],
   data () {
     return {
-      deck: null,
+      deck: '',
       cardId: ''
     }
   },
