@@ -4,6 +4,7 @@
     <div class="card" v-for="card in deck.cards" :key="card.id">
       <p> Front: {{ card.frontInformation }} </p>
       <p> Back: {{ card.backInformation }} </p>
+      <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
     </div>
   </div>
   <div>
@@ -25,8 +26,8 @@ export default {
     }
   },
   methods: {
-    deleteCard () {
-      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/cards/' + this.cardId
+    deleteCard (cardId) {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/cards/' + cardId
       const raw = JSON.stringify({
         cardId: this.cardId
       })
@@ -73,5 +74,9 @@ export default {
     border-radius: 4px;
     width: 200px;
     margin: 20px;
+  }
+
+  .deleteButton {
+    margin: 4px;
   }
 </style>
