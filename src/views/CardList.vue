@@ -26,6 +26,9 @@ export default {
     }
   },
   methods: {
+    toggleCard: function () {
+
+    },
     deleteCard (cardId) {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/cards/' + cardId
       const raw = JSON.stringify({
