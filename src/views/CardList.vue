@@ -2,8 +2,14 @@
   <h1>A list of cards </h1>
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
-      <p> Front: {{ card.frontInformation }} </p>
-      <p> Back: {{ card.backInformation }} </p>
+      <vue-flip active-click="" width="200px" height="50px">
+        <template v-slot:front>
+           Front: {{ card.frontInformation }}
+        </template>
+        <template v-slot:back>
+           Back: {{ card.backInformation }}
+        </template>
+      </vue-flip>
       <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
     </div>
   </div>
@@ -16,7 +22,11 @@
 </template>
 
 <script>
+import VueFlip from 'vue-flip'
 export default {
+  components: {
+    'vue-flip': VueFlip
+  },
   name: 'CardList',
   props: ['id'],
   data () {
@@ -76,6 +86,7 @@ export default {
     border: 1px solid;
     border-radius: 4px;
     width: 200px;
+    height: 200px;
     margin: 20px;
   }
 
