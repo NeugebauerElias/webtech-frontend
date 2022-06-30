@@ -2,14 +2,12 @@
   <h1>A list of cards </h1>
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
-      <vue-flip active-click="" width="200px" height="50px">
-        <template v-slot:front>
-           Front: {{ card.frontInformation }}
-        </template>
-        <template v-slot:back>
-           Back: {{ card.backInformation }}
-        </template>
-      </vue-flip>
+      <div v-if="!isBack" @click="toggleCard">
+        <p> Front: {{ card.frontInformation }} </p>
+      </div>
+      <div v-if="isBack" @click="toggleCard">
+        <p> Back: {{ card.backInformation }} </p>
+      </div>
       <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
     </div>
   </div>
@@ -22,22 +20,21 @@
 </template>
 
 <script>
-import VueFlip from 'vue-flip'
 export default {
   components: {
-    'vue-flip': VueFlip
   },
   name: 'CardList',
   props: ['id'],
   data () {
     return {
       deck: '',
-      cardId: ''
+      cardId: '',
+      isBack: false
     }
   },
   methods: {
     toggleCard: function () {
-
+      this.isBack = !this.isBack
     },
     deleteCard (cardId) {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/cards/' + cardId
