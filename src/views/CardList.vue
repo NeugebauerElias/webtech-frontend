@@ -2,13 +2,17 @@
   <h1>A list of cards </h1>
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
-      <div v-if="!isBack" @click="toggleCard">
-        <p> Front: {{ card.frontInformation }} </p>
+      <div class="btn">
+        <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
       </div>
-      <div v-if="isBack" @click="toggleCard">
-        <p> Back: {{ card.backInformation }} </p>
+      <div class="cardInformation">
+        <div v-if="!isBack" @click="toggleCard(card.id)" class="front">
+          <p> Front: {{ card.frontInformation }} </p>
+        </div>
+        <div v-if="isBack" @click="toggleCard(card.id)">
+          <p> Back: {{ card.backInformation }} </p>
+        </div>
       </div>
-      <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
     </div>
   </div>
   <div>
@@ -33,7 +37,7 @@ export default {
     }
   },
   methods: {
-    toggleCard: function () {
+    toggleCard: function (cardId) {
       this.isBack = !this.isBack
     },
     deleteCard (cardId) {
@@ -85,6 +89,19 @@ export default {
     width: 200px;
     height: 200px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .cardInformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .deleteButton {
