@@ -1,5 +1,7 @@
 <template>
-  <p> {{ deck.name }}</p>
+  <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
+    {{ deck.name }}
+  </router-link>
 </template>
 
 <script>
