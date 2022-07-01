@@ -38,6 +38,8 @@ export default {
 
       fetch(endpoint, requestOptions)
         .catch(error => console.log('error', error))
+
+      this.name = ''
     },
     safe () {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
