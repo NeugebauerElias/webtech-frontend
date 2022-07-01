@@ -5,16 +5,16 @@
       <div class="btn">
         <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
       </div>
-      <div class="cardInformation">
-        <div v-if="!isBack" @click="toggleCard(card.id)" class="front">
-          <p> Front: {{ card.frontInformation }} </p>
-        </div>
-        <div v-if="isBack" @click="toggleCard(card.id)">
-          <p> Back: {{ card.backInformation }} </p>
-        </div>
-      </div>
+      <vue-flip active-click="">
+        <template v-slot:front>
+          {{ card.frontInformation }}
+        </template>
+        <template v-slot:back>
+          {{ card.backInformation }}
+        </template>
+      </vue-flip>
     </div>
-  </div>
+    </div>
   <div>
     <h1>Delete a Card</h1>
   <input v-model="cardId" placeholder="ID">
@@ -24,8 +24,10 @@
 </template>
 
 <script>
+import VueFlip from 'vue-flip'
 export default {
   components: {
+    'vue-flip': VueFlip
   },
   name: 'CardList',
   props: ['id'],
