@@ -1,18 +1,17 @@
 <template>
   <div class="header">
-    <h1> Deck: {{ title }}</h1>
-    <p>
-      Here are decks shown, propably with the name in it.
-    </p>
+    <h1> Start learning </h1>
   </div>
-  <div class="nav">
-    <ul>
+  <div class="deck-container">
      <div v-for="deck in decks" :key="deck.albumId">
-       <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
-         <li > {{ deck.name }} </li>
-       </router-link>
+       <div class="deck">
+         <div class="name">
+           <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
+             {{ deck.name }}
+           </router-link>
+         </div>
+       </div>
      </div>
-    </ul>
   </div>
 </template>
 
@@ -46,21 +45,34 @@ ul{
   text-align: center;
   margin-right: 40px;
 }
-li{
-  display: inline-block;
-  padding: 10px 10px;
-  background: orange;
-  margin: 5px;
-  border-radius: 8px;
-}
-li:hover{
-  background: orangered;
-}
+
 a{
   color: black;
   text-decoration: none;
   padding: 30px 30px;
   border-radius: 10px;
   border-color: black;
+}
+.deck-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.deck {
+  border: solid 1px;
+  border-radius: 5px;
+  height: 150px;
+  width: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deck {
+  background: orange;
+}
+.deck:hover {
+  background: orangered;
 }
 </style>
