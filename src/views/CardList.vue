@@ -1,26 +1,23 @@
 <template>
-  <h1>A list of cards </h1>
+  <h1>Cards in {{ deck.name }} </h1>
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
       <div class="btn">
-        <button class="deleteButton" @click="deleteCard(card.id)">Delete</button>
+        <button class="deleteButton" @click="deleteCard(card.id)">❌</button>
       </div>
-      <vue-flip active-click="">
-        <template v-slot:front>
-          {{ card.frontInformation }}
-        </template>
-        <template v-slot:back>
-          {{ card.backInformation }}
-        </template>
-      </vue-flip>
+      <div class="cardInfo">
+        <vue-flip active-click="" width="200px" height="200px">
+          <template v-slot:front>
+            Front:
+            {{ card.frontInformation }}
+          </template>
+          <template v-slot:back>
+            Back: {{ card.backInformation }}
+          </template>
+        </vue-flip>
+      </div>
     </div>
-    </div>
-  <div>
-    <h1>Delete a Card</h1>
-  <input v-model="cardId" placeholder="ID">
-  <br>
-  <button type="submit" @click="deleteCard">Delete</button>
-  </div>
+   </div>
 </template>
 
 <script>
@@ -39,9 +36,6 @@ export default {
     }
   },
   methods: {
-    toggleCard: function (cardId) {
-      this.isBack = !this.isBack
-    },
     deleteCard (cardId) {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/cards/' + cardId
       const raw = JSON.stringify({
@@ -58,10 +52,8 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
-    },
-    turnIntoJson () {
-      this.deck = JSON.stringify(this.deck)
-      this.deck = JSON.parse(this.deck)
+
+      this.deck.cards.splice(cardId, 1)
     }
   },
   mounted () {
@@ -94,19 +86,14 @@ export default {
     display: flex;
     flex-direction: column;
   }
-
   .btn {
     display: flex;
     justify-content: flex-end;
   }
-
-  .cardInformation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .deleteButton {
     margin: 4px;
+  }
+  .cardInfo {
+    margin: auto;
   }
 </style>
