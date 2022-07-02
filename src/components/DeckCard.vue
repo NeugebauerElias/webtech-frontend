@@ -3,7 +3,6 @@
     <div class="name">
       <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
         {{ deck.name }}
-        {{ deck }}
       </router-link>
     </div>
   </div>
