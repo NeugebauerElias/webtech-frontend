@@ -1,6 +1,8 @@
 <template>
-  <div v-for="deck in decks" :key="deck.id">
-    <deck-card :deck="deck"></deck-card>
+  <div class="decks">
+    <div v-for="deck in decks" :key="deck.id">
+      <deck-card :deck="deck"></deck-card>
+    </div>
   </div>
 </template>
 
@@ -22,5 +24,9 @@ export default {
 </script>
 
 <style scoped>
-
+.decks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 </style>
