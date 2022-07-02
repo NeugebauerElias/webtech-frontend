@@ -4,7 +4,7 @@ import AddDeck from '@/components/AddDeck.vue'
 import AddCard from '@/components/AddCard.vue'
 import CardDeck from '@/components/CardDeck.vue'
 import FlashCard from '@/components/FlashCard'
-import CardList from '@/views/CardList'
+import CardList from '@/components/CardList'
 import DeckView from '@/views/DeckView'
 
 const routes = [
