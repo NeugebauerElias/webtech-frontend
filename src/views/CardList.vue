@@ -52,8 +52,7 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
-
-      this.deck.cards.splice(cardId, 1)
+      location.reload()
     }
   },
   mounted () {

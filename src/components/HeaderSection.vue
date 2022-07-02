@@ -5,7 +5,7 @@
       <li><router-link to="/add" exact>Add a Deck</router-link></li>
       <li><router-link to="/decks" exact>Your Decks</router-link></li>
       <li><router-link to="/addCard" exact>Add a Card</router-link></li>
-      <li><router-link to="/deck-view" exact>Deck</router-link></li>
+      <li><router-link to="/deck-view" exact>Decks</router-link></li>
     </ul>
   </nav>
 </template>
