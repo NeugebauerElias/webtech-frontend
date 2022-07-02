@@ -52,6 +52,7 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
+      // reload the page to make delete visible
       location.reload()
     }
   },
