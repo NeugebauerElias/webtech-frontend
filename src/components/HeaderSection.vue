@@ -3,7 +3,6 @@
   <nav>
     <ul>
       <li><router-link to="/add" exact>Add a Deck</router-link></li>
-      <li><router-link to="/decks" exact>Your Decks</router-link></li>
       <li><router-link to="/addCard" exact>Add a Card</router-link></li>
       <li><router-link to="/deck-view" exact>Decks</router-link></li>
     </ul>
@@ -39,9 +38,5 @@ export default {}
   nav{
     background: #444;
     margin-bottom: 40px;
-  }
-  .router-link-active{
-    background: #eee;
-    color: #444;
   }
 </style>
