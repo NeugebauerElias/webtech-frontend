@@ -41,4 +41,8 @@ a {
   text-decoration: none;
   color: #195190FF;
 }
+
+a:hover {
+  color: #773bc4;
+}
 </style>
