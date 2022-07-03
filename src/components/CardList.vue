@@ -1,5 +1,6 @@
 <template>
   <h1>Cards in {{ deck.name }} </h1>
+  <create-card v-bind:id="id"></create-card>
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
       <div class="btn">
@@ -22,17 +23,18 @@
 
 <script>
 import VueFlip from 'vue-flip'
+import CreateCard from '@/components/CreateCard'
 export default {
   components: {
-    'vue-flip': VueFlip
+    'vue-flip': VueFlip,
+    CreateCard
   },
   name: 'CardList',
   props: ['id'],
   data () {
     return {
       deck: '',
-      cardId: '',
-      isBack: false
+      cardId: ''
     }
   },
   methods: {
