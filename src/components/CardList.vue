@@ -4,10 +4,10 @@
   <div class="container">
     <div class="card" v-for="card in deck.cards" :key="card.id">
       <div class="btn">
-        <button class="deleteButton" @click="deleteCard(card.id)">❌</button>
+        <button class="deleteButton" @click.prevent="deleteCard(card.id)">❌</button>
       </div>
       <div class="cardInfo">
-        <vue-flip active-click="" width="200px" height="200px">
+        <vue-flip active-click="" width="200px" height="1500px">
           <template v-slot:front>
             Front: <br>
             <span class="info">{{ card.frontInformation }}</span>
@@ -84,7 +84,7 @@ export default {
     border: 1px solid;
     border-radius: 4px;
     width: 200px;
-    height: 200px;
+    height: 150px;
     margin: 20px;
     display: flex;
     flex-direction: column;
