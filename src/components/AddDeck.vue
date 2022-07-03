@@ -3,7 +3,7 @@
     <h1>Add a new Deck</h1>
   </div>
   <div>
-    <input v-model="name" placeholder="DeckName">
+    <input v-model="name" placeholder="DeckName" required>
     <br>
     <br>
     <button type="submit" @click="createAlbum()">Safe</button>
