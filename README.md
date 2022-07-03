@@ -1,5 +1,8 @@
 # webtech-frontend
 [![CI](https://github.com/NeugebauerElias/webtech-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/NeugebauerElias/webtech-frontend/actions/workflows/ci.yml)
+## Deployment on Heroku:
+https://webtech-flashcard-frontend.herokuapp.com/
+
 ## Project setup
 ```
 npm install
