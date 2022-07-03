@@ -47,6 +47,8 @@ export default {
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
 
+      this.frontInfo = ''
+      this.backInfo = ''
       // reload page after adding card
       location.reload()
     }
