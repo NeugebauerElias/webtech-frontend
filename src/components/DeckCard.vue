@@ -5,6 +5,9 @@
         {{ deck.name }}
       </router-link>
     </div>
+    <div class="btn">
+    <button class="deleteButton" @click="deleteDeck(deck.albumId)">❌</button>
+  </div>
   </div>
 </template>
 
@@ -15,6 +18,26 @@ export default {
     deck: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    deleteDeck (deckId) {
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + deckId
+      const raw = JSON.stringify({
+        deckId: this.deckId
+      })
+
+      const requestOptions = {
+        method: 'DELETE',
+        body: raw,
+        redirect: 'follow'
+      }
+
+      fetch(endpoint, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error))
+      // reload the page to make delete visible
     }
   }
 }
@@ -31,6 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: lightgrey;
 }
 .name {
   font-weight: 500;
@@ -44,5 +68,19 @@ a {
 
 a:hover {
   color: #773bc4;
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.deleteButton {
+  margin: 4px;
+  border: 0;
+  background-color: white;
+  border-radius: 4px;
+}
+.deleteButton:hover {
+  background-color: #3f49c4;
 }
 </style>

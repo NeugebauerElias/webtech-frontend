@@ -34,7 +34,7 @@ export default {
       console.log(this.frontInfo)
       console.log(this.backInfo)
 
-      if (this.frontInfo & this.backInfo !== '') {
+      if (this.frontInfo !== '' || this.backInfo !== '') {
         const myHeaders = new Headers()
         myHeaders.append('Content-Type', 'application/json')
 

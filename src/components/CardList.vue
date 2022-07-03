@@ -77,40 +77,40 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card {
-    border: 1px solid;
-    border-radius: 4px;
-    width: 200px;
-    height: 150px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  .btn {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .deleteButton {
-    margin: 4px;
-    border: 0;
-    background-color: white;
-    border-radius: 4px;
-  }
-  .deleteButton:hover {
-    background-color: #3f49c4;
-  }
-  .cardInfo {
-    margin: auto;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .info {
-    font-size: 24px;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  border: 1px solid;
+  border-radius: 4px;
+  width: 200px;
+  height: 150px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.deleteButton {
+  margin: 4px;
+  border: 0;
+  background-color: white;
+  border-radius: 4px;
+}
+.deleteButton:hover {
+  background-color: #3f49c4;
+}
+.cardInfo {
+  margin: auto;
+  text-align: center;
+}
+.info {
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 </style>
