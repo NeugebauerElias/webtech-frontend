@@ -5,7 +5,7 @@
       <input v-model="frontInfo" id="front" type="text" required /><br>
       <label for="back">Back:</label><br>
       <input v-model="backInfo" id="back" required /><br><br>
-      <button @click.prevent="createCard">Save</button>
+      <button @click="createCard">Save</button>
     </form>
   </div>
 </template>
