@@ -2,9 +2,9 @@
   <div>
     <form action="">
       <label>Front:</label><br>
-      <input v-model="frontInfo" type="text"><br>
+      <input v-model="frontInfo" type="text" required><br>
       <label>Back:</label><br>
-      <input v-model="backInfo" ><br><br>
+      <input v-model="backInfo" required><br><br>
       <button @click.prevent="createCard">Save</button>
     </form>
   </div>
@@ -46,6 +46,9 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
+
+      // reload page after adding card
+      location.reload()
     }
   }
 }
