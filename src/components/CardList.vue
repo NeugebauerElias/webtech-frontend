@@ -56,7 +56,9 @@ export default {
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
       // reload the page to make delete visible
-      location.reload()
+    },
+    refreshPage () {
+      window.location.reload()
     }
   },
   mounted () {
@@ -105,6 +107,8 @@ export default {
   .cardInfo {
     margin: auto;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .info {
     font-size: 24px;

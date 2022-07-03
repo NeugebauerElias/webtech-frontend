@@ -1,10 +1,10 @@
+import swal from 'sweetalert';
 <template>
   <div class="header">
     <h1>Add a new Deck</h1>
   </div>
   <div>
     <input v-model="name" placeholder="DeckName" required>
-    <br>
     <br>
     <button type="submit" @click="createAlbum()">Safe</button>
   </div>
@@ -20,26 +20,40 @@ export default {
   methods: {
     loadThings () {
     },
+    showAlert () {
+      // Use sweetalert2
+      this.$swal('Please add a name to the Deck')
+    },
+    showSucces () {
+      // Use sweetalert2
+      this.$swal('Nice you added a new Deck!')
+    },
     createAlbum () {
-      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
-      const myHeaders = new Headers()
-      myHeaders.append('Content-Type', 'application/json')
+      if (this.name !== '') {
+        const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
+        const myHeaders = new Headers()
+        myHeaders.append('Content-Type', 'application/json')
 
-      const raw = JSON.stringify({
-        name: this.name
-      })
+        const raw = JSON.stringify({
+          name: this.name,
+          $swal: this.$swal
+        })
 
-      const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+        const requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        }
+
+        fetch(endpoint, requestOptions)
+          .catch(error => console.log('error', error))
+
+        this.name = ''
+        this.showSucces()
+      } else {
+        this.showAlert()
       }
-
-      fetch(endpoint, requestOptions)
-        .catch(error => console.log('error', error))
-
-      this.name = ''
     },
     safe () {
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
@@ -59,6 +73,7 @@ export default {
           console.log('Success:', data)
         })
         .catch(error => console.log('error', error))
+      this.name = ''
     }
   }
 }

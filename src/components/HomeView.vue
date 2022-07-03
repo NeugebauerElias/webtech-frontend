@@ -10,7 +10,7 @@ export default {
   props: ['msg'],
   data () {
     return {
-      msg2: 'Hello World'
+      msg2: 'Welcome to Indexcards. Add a deck and start adding cards to it. Lets get this "A+"'
     }
   }
 }

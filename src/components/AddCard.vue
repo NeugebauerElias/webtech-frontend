@@ -7,7 +7,7 @@
     <input v-model="frontInformation" placeholder="Vorderseite">
     <input v-model="backInformation" placeholder="Rückseite">
     <br>
-    <select name="cars" id="cars">
+    <select id="cars">
       <option v-for="deck in flashCards" :key="deck.id">{{ deck.name }} </option>
     </select>
     <br>
@@ -67,7 +67,9 @@ export default {
         .catch(error => console.log('error', error))
     },
     safe () {
-      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/1/card'
+      const e = document.getElementById('deck.id')
+      const strUser = e.value
+      const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + strUser + '/card'
       const data = {
         front: this.frontInformation,
         back: this.backInformation
