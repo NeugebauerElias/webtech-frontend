@@ -1,11 +1,11 @@
 <template>
   <div>
     <form action="">
-      <label>Front:</label><br>
-      <input v-model="frontInfo" type="text" required><br>
-      <label>Back:</label><br>
-      <input v-model="backInfo" required><br><br>
-      <button @click.prevent="createCard">Save</button>
+      <label for="front">Front:</label><br>
+      <input v-model="frontInfo" id="front" type="text" required /><br>
+      <label for="back">Back:</label><br>
+      <input v-model="backInfo" id="back" required /><br><br>
+      <input type="submit" @click.prevent="createCard" value="Save">
     </form>
   </div>
 </template>

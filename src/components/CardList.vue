@@ -9,11 +9,12 @@
       <div class="cardInfo">
         <vue-flip active-click="" width="200px" height="200px">
           <template v-slot:front>
-            Front:
-            {{ card.frontInformation }}
+            Front: <br>
+            <span class="info">{{ card.frontInformation }}</span>
           </template>
           <template v-slot:back>
-            Back: {{ card.backInformation }}
+            Back: <br>
+            <span class="info"> {{ card.backInformation }}</span>
           </template>
         </vue-flip>
       </div>
@@ -94,8 +95,18 @@ export default {
   }
   .deleteButton {
     margin: 4px;
+    border: 0;
+    background-color: white;
+    border-radius: 4px;
+  }
+  .deleteButton:hover {
+    background-color: #3f49c4;
   }
   .cardInfo {
     margin: auto;
+    text-align: center;
+  }
+  .info {
+    font-size: 24px;
   }
 </style>
