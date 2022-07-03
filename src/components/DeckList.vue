@@ -1,7 +1,7 @@
 <template>
   <div class="decks">
     <div v-for="deck in decks" :key="deck.id">
-      <deck-card :deck="deck"></deck-card>
+      <deck-card :deck="deck" class="deckId"></deck-card>
     </div>
   </div>
 </template>

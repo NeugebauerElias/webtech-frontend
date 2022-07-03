@@ -3,7 +3,7 @@ import DeckView from '@/views/DeckView'
 import DeckList from '@/components/DeckList'
 
 describe('Testing DeckView.vue', () => {
-  it('should have deck list componet', () => {
+  it('should have deck list component', () => {
     // when
     const wrapper = mount(DeckView)
 

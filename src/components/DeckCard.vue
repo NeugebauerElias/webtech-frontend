@@ -1,7 +1,7 @@
 <template>
   <div class="deck">
     <div class="name">
-      <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}">
+      <router-link :to="{ name: 'CardList', params: {id: deck.albumId }}" class="routerDeck">
         {{ deck.name }}
       </router-link>
     </div>
