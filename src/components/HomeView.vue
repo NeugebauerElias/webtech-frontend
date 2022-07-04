@@ -3,10 +3,15 @@
     <h1> {{ msg2 }} </h1>
     <p> {{ msg }}</p>
   </div>
+  <show-dog/>
 </template>
 
 <script>
+import ShowDog from '@/components/ShowDog'
 export default {
+  components: {
+    ShowDog
+  },
   props: ['msg'],
   data () {
     return {

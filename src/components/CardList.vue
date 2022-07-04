@@ -20,6 +20,7 @@
       </div>
     </div>
    </div>
+  {{ deck.cards }}
 </template>
 
 <script>
@@ -35,7 +36,8 @@ export default {
   data () {
     return {
       deck: '',
-      cardId: ''
+      cardId: '',
+      dogLink: ''
     }
   },
   methods: {
