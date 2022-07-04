@@ -16,7 +16,7 @@ export default {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        'X-RapidAPI-Key': process.env.X_RAPIDAPI_KEY,
+        'X-RapidAPI-Key': process.env.VUE_APP_API_KEY,
         'X-RapidAPI-Host': 'matchilling-chuck-norris-jokes-v1.p.rapidapi.com'
       }
     }
