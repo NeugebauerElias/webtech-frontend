@@ -3,30 +3,12 @@
 ## Deployment on Heroku:
 https://webtech-flashcard-frontend.herokuapp.com/
 
-## Project setup
+## Nutzungshinweis
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run start
-```
-
-### Compiles and minifies for production
-```
-npm run build
+- Registriere dich auf der Website
+- Navigiere auf Decks und füge bei Bedarf Karten hinzu
+- Wähle ein Deck aus
+- Du kannst nun Karten hinzufügen oder lernen indem du sie per Click flippst
+- Möchtest du eine Karte oder einen Stapel löschen, drück auf das X
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
