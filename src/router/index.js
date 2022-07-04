@@ -6,6 +6,9 @@ import CardDeck from '@/components/CardDeck.vue'
 import FlashCard from '@/components/FlashCard'
 import CardList from '@/components/CardList'
 import DeckView from '@/views/DeckView'
+import UserRegister from '@/components/UserRegister'
+import SignIn from '@/components/SignIn'
+// import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const routes = [
   {
@@ -42,13 +45,50 @@ const routes = [
   {
     path: '/deck-view',
     name: 'DeckView',
-    component: DeckView
+    component: DeckView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/register',
+    name: 'UserRegister',
+    component: UserRegister
+  },
+  {
+    path: '/sign-in',
+    name: 'SignIn',
+    component: SignIn
   }
 ]
-
+/*
+const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const removeListener = onAuthStateChanged(
+      getAuth(),
+      (user) => {
+        removeListener()
+        resolve(user)
+      },
+      reject
+    )
+  })
+}
+*/
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-
+/*
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (await getCurrentUser()) {
+      next()
+    } else {
+      alert('you dont have access!')
+      next('/')
+    }
+  }
+})
+*/
 export default router
