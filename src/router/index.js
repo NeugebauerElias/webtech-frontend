@@ -10,57 +10,61 @@ import UserRegister from '@/components/UserRegister'
 import SignIn from '@/components/SignIn'
 // import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/add',
-    name: 'add',
-    component: AddDeck
-  },
-  {
-    path: '/addCard',
-    name: 'addCard',
-    component: AddCard
-  },
-  {
-    path: '/deck',
-    name: 'deck',
-    component: CardDeck
-  },
-  {
-    path: '/card',
-    name: 'Card',
-    component: FlashCard
-  },
-  {
-    path: '/card/:id',
-    name: 'CardList',
-    component: CardList,
-    props: true
-  },
-  {
-    path: '/deck-view',
-    name: 'DeckView',
-    component: DeckView,
-    meta: {
-      requiresAuth: true
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/add',
+      name: 'add',
+      component: AddDeck
+    },
+    {
+      path: '/addCard',
+      name: 'addCard',
+      component: AddCard
+    },
+    {
+      path: '/deck',
+      name: 'deck',
+      component: CardDeck
+    },
+    {
+      path: '/card',
+      name: 'Card',
+      component: FlashCard
+    },
+    {
+      path: '/card/:id',
+      name: 'CardList',
+      component: CardList,
+      props: true
+    },
+    {
+      path: '/deck-view',
+      name: 'DeckView',
+      component: DeckView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/register',
+      name: 'UserRegister',
+      component: UserRegister
+    },
+    {
+      path: '/sign-in',
+      name: 'SignIn',
+      component: SignIn
     }
-  },
-  {
-    path: '/register',
-    name: 'UserRegister',
-    component: UserRegister
-  },
-  {
-    path: '/sign-in',
-    name: 'SignIn',
-    component: SignIn
-  }
-]
+  ]
+}
+)
 /*
 const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
@@ -74,14 +78,8 @@ const getCurrentUser = () => {
     )
   })
 }
-*/
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
-/*
 router.beforeEach(async (to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
+  if (to.meta.requiresAuth) {
     if (await getCurrentUser()) {
       next()
     } else {
