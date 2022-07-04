@@ -4,8 +4,8 @@ import swal from 'sweetalert';
     <h1>Add a new Deck</h1>
     <input v-model="name" placeholder="DeckName" required>
     <br>
-    <button type="submit" @click="createAlbum()">Safe</button>
   </div>
+    <button class="button button1" type="submit" @click="createAlbum()">Safe</button>
   <button class="button button2" @click="refreshPage">Refresh</button>
   <div class="decks">
     <div v-for="deck in decks" :key="deck.id">
@@ -102,6 +102,9 @@ export default {
    margin: 10px 2px;
    cursor: pointer;
  }
+.button1{
+  background-color: #4CAF50;
+}
 .button2 {
   background: lightskyblue;
 }
