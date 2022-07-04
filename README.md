@@ -5,7 +5,7 @@ https://webtech-flashcard-frontend.herokuapp.com/
 
 ## Nutzungshinweis
 ```
-- Registriere dich auf der Website
+- Registriere dich auf der Websitem mit Google beispielsweise
 - Navigiere auf Decks und füge bei Bedarf Karten hinzu
 - Wähle ein Deck aus
 - Du kannst nun Karten hinzufügen oder lernen indem du sie per Click flippst
