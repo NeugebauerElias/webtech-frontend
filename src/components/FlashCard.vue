@@ -1,6 +1,6 @@
 <template>
   <h1>This is a flashcard</h1>
-  <div v-for="card in flashCards" :key="card">
+  <div class="card" v-for="card in flashCards" :key="card">
   </div>
 </template>
 
@@ -29,5 +29,8 @@ export default {
 </script>
 
 <style>
-
+.card {
+  background-color: lightgrey;
+  border-color: white;
+}
 </style>

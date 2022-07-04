@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/HomeView.vue'
-import AddDeck from '@/components/AddDeck.vue'
-import AddCard from '@/components/AddCard.vue'
-import CardDeck from '@/components/CardDeck.vue'
 import FlashCard from '@/components/FlashCard'
 import CardList from '@/components/CardList'
 import DeckView from '@/views/DeckView'
@@ -16,27 +13,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: '/add',
-      name: 'add',
-      component: AddDeck
-    },
-    {
-      path: '/addCard',
-      name: 'addCard',
-      component: AddCard,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: '/deck',
-      name: 'deck',
-      component: CardDeck,
       meta: {
         requiresAuth: false
       }

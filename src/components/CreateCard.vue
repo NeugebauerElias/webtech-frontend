@@ -34,32 +34,36 @@ export default {
       console.log(this.frontInfo)
       console.log(this.backInfo)
 
-      if (this.frontInfo !== '' || this.backInfo !== '') {
-        const myHeaders = new Headers()
-        myHeaders.append('Content-Type', 'application/json')
+      if (this.frontInfo !== '') {
+        if (this.backInfo !== '') {
+          const myHeaders = new Headers()
+          myHeaders.append('Content-Type', 'application/json')
 
-        const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + this.id + '/card/'
+          const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + this.id + '/card/'
 
-        const raw = JSON.stringify({
-          frontInformation: this.frontInfo,
-          backInformation: this.backInfo
-        })
+          const raw = JSON.stringify({
+            frontInformation: this.frontInfo,
+            backInformation: this.backInfo
+          })
 
-        const requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow'
+          const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          }
+
+          fetch(endpoint, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error))
+
+          this.frontInfo = ''
+          this.backInfo = ''
+          this.showSucces()
+        } else {
+          this.showAlert()
         }
-
-        fetch(endpoint, requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error))
-
-        this.frontInfo = ''
-        this.backInfo = ''
-        this.showSucces()
       } else {
         this.showAlert()
       }

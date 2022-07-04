@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 <template>
   <div class="deck">
     <div class="name">
@@ -21,7 +22,12 @@ export default {
     }
   },
   methods: {
+    showSuccess () {
+      // Use sweetalert2
+      this.$swal('You deleted this Card!')
+    },
     deleteDeck (deckId) {
+      this.showSuccess()
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/' + deckId
       const raw = JSON.stringify({
         deckId: this.deckId
@@ -37,7 +43,6 @@ export default {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error))
-      // reload the page to make delete visible
     }
   }
 }
