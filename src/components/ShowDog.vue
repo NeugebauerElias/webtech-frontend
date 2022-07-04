@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ currentDogLink }}
   </div>
 </template>
 
@@ -9,8 +8,19 @@ export default {
   name: 'ShowDog',
   data () {
     return {
-      currentDogLink: 'https://place.dog/300/200'
+      currentDogLink: ''
     }
+  },
+  mounted () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('https://randomfox.ca', requestOptions)
+      .then(response => response.text())
+      .then(result => { this.currentDogLink = result })
+      .catch(error => console.log('error', error))
   }
 }
 </script>
