@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 const email = ref('')
 const password = ref('')
@@ -45,8 +45,27 @@ const register = () => {
 }
 
 const signInWithGoogle = () => {
+  const provider = new GoogleAuthProvider()
+  signInWithPopup(getAuth(), provider)
+    .then((result) => {
+      router.push('/')
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
 }
 
+</script>
+
+<script>
+export default {
+  methods: {
+    showSuccess () {
+      // Use sweetalert2
+      this.$swal('You signed In!')
+    }
+  }
+}
 </script>
 
 <style scoped>
