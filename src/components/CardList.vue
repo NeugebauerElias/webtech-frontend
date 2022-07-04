@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import VueFlip from 'vue-flip'
+import VueFlip from 'vue-flip' // imported npm module
 import CreateCard from '@/components/CreateCard'
 export default {
   components: {

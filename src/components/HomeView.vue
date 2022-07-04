@@ -2,15 +2,16 @@
   <div>
     <h1> {{ msg2 }} </h1>
     <p> {{ msg }}</p>
+    <joke-api/>
   </div>
-  <show-dog/>
+
 </template>
 
 <script>
-import ShowDog from '@/components/ShowDog'
+import JokeApi from '@/components/JokeApi'
 export default {
   components: {
-    ShowDog
+    JokeApi
   },
   props: ['msg'],
   data () {
