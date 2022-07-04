@@ -8,7 +8,6 @@ import CardList from '@/components/CardList'
 import DeckView from '@/views/DeckView'
 import UserRegister from '@/components/UserRegister'
 import SignIn from '@/components/SignIn'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -16,7 +15,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/add',
@@ -26,23 +28,35 @@ const router = createRouter({
     {
       path: '/addCard',
       name: 'addCard',
-      component: AddCard
+      component: AddCard,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/deck',
       name: 'deck',
-      component: CardDeck
+      component: CardDeck,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/card',
       name: 'Card',
-      component: FlashCard
+      component: FlashCard,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/card/:id',
       name: 'CardList',
       component: CardList,
-      props: true
+      props: true,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/deck-view',
@@ -55,7 +69,10 @@ const router = createRouter({
     {
       path: '/register',
       name: 'UserRegister',
-      component: UserRegister
+      component: UserRegister,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/sign-in',
@@ -65,7 +82,7 @@ const router = createRouter({
   ]
 }
 )
-
+/*
 const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
     const removeListener = onAuthStateChanged(
@@ -85,9 +102,9 @@ router.beforeEach(async (to, from, next) => {
       next()
     } else {
       alert('you dont have access!')
-      next('/')
+      next('/sign-in')
     }
   }
 })
-
+*/
 export default router

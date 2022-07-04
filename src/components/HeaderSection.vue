@@ -7,15 +7,13 @@
       <li><router-link to="/deck-view" exact>Decks</router-link></li>
       <li><router-link to="/register" exact>Register</router-link></li>
       <li><router-link to="/sign-in" exact>SignIn</router-link></li>
-      <li><button @click="handlesSignOut" v-if="isLoggedIn">SignOut</button></li>
     </ul>
   </nav>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
-import router from '@/router'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const isLoggedIn = ref(false)
 
@@ -31,11 +29,6 @@ onMounted(() => {
   })
 })
 
-const handlesSignOut = () => {
-  signOut(auth).then(() => {
-    router.push('/')
-  })
-}
 </script>
 
 <style scoped>

@@ -55,6 +55,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: lightgrey;
+  border-color: white;
 }
 .name {
   font-weight: 500;
@@ -63,7 +64,7 @@ export default {
 
 a {
   text-decoration: none;
-  color: #195190FF;
+  color: black;
 }
 
 a:hover {

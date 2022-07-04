@@ -28,29 +28,37 @@ export default {
       // Use sweetalert2
       this.$swal('Nice you added a new Deck!')
     },
+    showLength () {
+      // Use sweetalert2
+      this.$swal('The name cant be longer than 14!')
+    },
     createAlbum () {
       if (this.name !== '') {
-        const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
-        const myHeaders = new Headers()
-        myHeaders.append('Content-Type', 'application/json')
+        if (this.name.length < 14) {
+          const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/album/'
+          const myHeaders = new Headers()
+          myHeaders.append('Content-Type', 'application/json')
 
-        const raw = JSON.stringify({
-          name: this.name,
-          $swal: this.$swal
-        })
+          const raw = JSON.stringify({
+            name: this.name,
+            $swal: this.$swal
+          })
 
-        const requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow'
+          const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          }
+
+          fetch(endpoint, requestOptions)
+            .catch(error => console.log('error', error))
+
+          this.name = ''
+          this.showSucces()
+        } else {
+          this.showLength()
         }
-
-        fetch(endpoint, requestOptions)
-          .catch(error => console.log('error', error))
-
-        this.name = ''
-        this.showSucces()
       } else {
         this.showAlert()
       }
