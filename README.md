@@ -1,5 +1,7 @@
 # webtech-frontend
 [![CI](https://github.com/NeugebauerElias/webtech-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/NeugebauerElias/webtech-frontend/actions/workflows/ci.yml)
+## Link to our backend
+https://github.com/NeugebauerElias/webtech-backend
 
 ## Nutzungshinweis
 ```
